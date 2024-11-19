@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="pie.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>DASHBOARD</h1>
+        <div class="chart-container">
+            <div class="chart-card">
+                <h3>Grafik Jumlah Warga Berdasarkan Klasifikasi</h3>
+                <canvas id="barChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>Grafik Data Dokumen Penduduk</h3>
+                <canvas id="pieChart1"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>Grafik Data Agama</h3>
+                <canvas id="pieChart2"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="pie.js"></script>
+</body>
+</html>
