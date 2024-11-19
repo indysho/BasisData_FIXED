@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="pie.css">
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+    <!-- Add custom styles for sidebar push effect -->
+    <style>
+        /* Sidebar push effect styles */
+        body.sb-sidenav-toggled #layoutSidenav_content {
+            margin-left: 250px; /* Adjust based on sidebar width */
+            transition: margin-left 0.3s ease; /* Smooth transition */
+        }
+
+        #layoutSidenav {
+            display: flex;
+        }
+
+        #layoutSidenav_nav {
+            width: 250px; /* Adjust based on sidebar width */
+            flex-shrink: 0;
+        }
+
+        #layoutSidenav_content {
+            flex: 1;
+            transition: margin-left 0.3s ease;
+        }
+    </style>
+</head>
+
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand ps-3" href="admin.html">Admin Page</a>
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!">
+            <i class="fas fa-bars"></i>
+        </button>
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                <button class="btn btn-primary" id="btnNavbarSearch" type="button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </form>
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-user fa-fw"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">Settings</a></li>
+                    <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" href="index.html">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <div class="sb-sidenav-menu-heading">Core</div>
+                        <a class="nav-link" href="admin.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Dashboard
+                        </a>
+                        <div class="sb-sidenav-menu-heading">Interface</div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Master Data
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="tablesadmin.html">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i></div>
+                                    Alumni
+                                </a>
+                            </nav>
+                        </div>
+                        
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="pendidikan.html">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i></div>
+                                    Pekerjaan & Gaji
+                                </a>
+                            </nav>
+                        </div>
+
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="pendidikan.html">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i></div>
+                                    Pendidikan
+                                </a>
+                            </nav>
+                        </div>
+
+
+                        <div class="sb-sidenav-menu-heading">Others</div>
+
+                        <a class="nav-link" href="layout-sidenav-lightadmin.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-newspaper"></i></div>
+                            Berita
+                        </a>
+                        <a class="nav-link" href="layout-staticadmin.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-briefcase"></i></div>
+                            Lowongan Kerja
+                        </a>
+
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-sign-out-alt"></i></div>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">Logged in as:</div>
+                    AdminIndy
+                </div>
+            </nav>
+        </div>
+
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid">
+                    <h1 class="mt-4 text-center"><br>Dashboard</h1>
+                    <div class="row justify-content-center">
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-primary text-white mb-4 text-center">
+                                <div class="card-body">
+                                    <i class="fas fa-user-graduate fa-2x"></i> Alumni
+                                </div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="#">31</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-warning text-white mb-4 text-center">
+                                <div class="card-body">
+                                    <i class="fas fa-briefcase fa-2x"></i> Lowongan Kerja
+                                </div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="#">4</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-success text-white mb-4 text-center">
+                                <div class="card-body">
+                                    <i class="fas fa-newspaper fa-2x"></i> Berita
+                                </div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="#">4</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-container">
+                        <div class="chart-container">
+                            <div class="chart-card">
+                                <h3>Rata-Rata Gaji</h3>
+                                <canvas id="salaryChart"></canvas>
+                            </div>
+                            <div class="chart-card">
+                                <h3>Grafik Pekerjaan</h3>
+                                <canvas id="jobChart"></canvas>
+                            </div>
+                            <div class="chart-card">
+                                <h3>Grafik Pendidikan</h3>
+                                <canvas id="educationChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                       
+                            <div class="container">
+                                <p>&copy; SI ALUMNI 2024 All Rights Reserved.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"></script>
+    <script src="adminchart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            if (sidebarToggle) {
+                sidebarToggle.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    document.body.classList.toggle('sb-sidenav-toggled');
+                });
+            }
+            
+            // Example charts
+            const ctx1 = document.getElementById('salaryChart').getContext('2d');
+            new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: ['January', 'February', 'March', 'April', 'May'],
+                    datasets: [{
+                        label: 'Salary',
+                        data: [1200, 1500, 1700, 2000, 2200],
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            const ctx2 = document.getElementById('jobChart').getContext('2d');
+            new Chart(ctx2, {
+                type: 'pie',
+                data: {
+                    labels: ['Job A', 'Job B', 'Job C', 'Job D'],
+                    datasets: [{
+                        label: 'Job Distribution',
+                        data: [30, 25, 20, 25],
+                        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#FF9F40']
+                    }]
+                }
+            });
+
+            const ctx3 = document.getElementById('educationChart').getContext('2d');
+            new Chart(ctx3, {
+                type: 'line',
+                data: {
+                    labels: ['2020', '2021', '2022', '2023'],
+                    datasets: [{
+                        label: 'Education Level',
+                        data: [3, 5, 7, 6],
+                        borderColor: 'rgba(153, 102, 255, 1)',
+                        backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                        fill: true
+                    }]
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

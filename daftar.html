@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle Sidebar</title>
+  <link rel="stylesheet" href="daftar.css">
+  <style>
+    body {
+    background-image: url('geometrci blue.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+  </style>
+</head>
+<body>
+  <button class="toggle-button" id="toggleButton">☰</button>
+
+  <div class="sidebar inactive" id="sidebar">
+    <ul>
+      <br><br><br>
+      <li><a href="daftar.html">Alumni List</a></li>
+      <li><a href="form_tracer.html">Form Tracer Study</a></li>
+      <li><a href="dashboard.html">Dashboard Tracer Study</a></li>
+      <li><a href="index.html" id="goBackLink">Go Back</a></li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <div class="search-bar">
+      <select id="jurusanSelect">
+        <option value="">Pilih Jurusan</option>
+        <option value="IT">Manajemen Informatika</option>
+        <option value="Business">Teknik Mesin</option>
+        <option value="Engineering">Teknik Listrik</option>
+        <option value="Business">Teknik Sipil</option>
+        <option value="Engineering">Agroindustri</option>
+        <!-- Add more options as needed -->
+      </select>
+      <input type="text" id="nimInput" placeholder="NIM">
+      <input type="text" id="namaInput" placeholder="Nama">
+    </div>
+    
+    <div class="table-container">
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th>NIM</th>
+            <th>Nama</th>
+            <th>Jurusan</th>
+            <th>Tahun Lulus</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="py-2 px-4 border-b">16320066</td>
+                <td class="py-2 px-4 border-b">Levi Ackerman</td>
+                <td class="py-2 px-4 border-b">Teknik Mesin</td>
+                <td class="py-2 px-4 border-b">2023</td>
+                
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">16323046</td>
+                <td class="py-2 px-4 border-b">Anisa Putri Utami</td>
+                <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                <td class="py-2 px-4 border-b">2023</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">16320120</td>
+                <td class="py-2 px-4 border-b">Freya Alhamdulillah</td>
+                <td class="py-2 px-4 border-b">Agroindustri</td>
+                <td class="py-2 px-4 border-b">2023</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">16321170</td>
+                <td class="py-2 px-4 border-b">Zee Jekatedimana</td>
+                <td class="py-2 px-4 border-b">Rekayasa Jalan dan Jembatan</td>
+                <td class="py-2 px-4 border-b">2024</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">16320035</td>
+                <td class="py-2 px-4 border-b">Rafael Struick</td>
+                <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                <td class="py-2 px-4 border-b">2023</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">16320040</td>
+                <td class="py-2 px-4 border-b">Tom A. Holland</td>
+                <td class="py-2 px-4 border-b">Teknik Listrik</td>
+                <td class="py-2 px-4 border-b">2023</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">16320041</td>
+                <td class="py-2 px-4 border-b">Anindi Maulani Mustofa</td>
+                <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                <td class="py-2 px-4 border-b">2023</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">16320042</td>
+                <td class="py-2 px-4 border-b">Rosita</td>
+                <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                <td class="py-2 px-4 border-b">2023</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">16320043</td>
+                <td class="py-2 px-4 border-b">Endang Aftia</td>
+                <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                <td class="py-2 px-4 border-b">2023</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">16320045</td>
+                <td class="py-2 px-4 border-b">Albar Palahidu</td>
+                <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                <td class="py-2 px-4 border-b">2023</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">16321044</td>
+                <td class="py-2 px-4 border-b">Miguel Diaz</td>
+                <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                <td class="py-2 px-4 border-b">2024</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">16320066</td>
+                <td class="py-2 px-4 border-b">Albertus Giorgino</td>
+                <td class="py-2 px-4 border-b">Teknik Mesin</td>
+                <td class="py-2 px-4 border-b">2023</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">17823456</td>
+                <td class="py-2 px-4 border-b">Afita Putri</td>
+                <td class="py-2 px-4 border-b">Teknik Sipil</td>
+                <td class="py-2 px-4 border-b">2020</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">16324562</td>
+                <td class="py-2 px-4 border-b">Abastian Aliandro Kamandaka</td>
+                <td class="py-2 px-4 border-b">Teknik Sipil</td>
+                <td class="py-2 px-4 border-b">2023</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">16545809</td>
+                <td class="py-2 px-4 border-b">Andreas Reyliando</td>
+                <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                <td class="py-2 px-4 border-b">2022</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">16323089</td>
+                <td class="py-2 px-4 border-b">Arfaksyad Gani</td>
+                <td class="py-2 px-4 border-b">Teknik Listrik</td>
+                <td class="py-2 px-4 border-b">2023</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">18182373</td>
+                <td class="py-2 px-4 border-b">Delila Natalia</td>
+                <td class="py-2 px-4 border-b">Teknik Listrik</td>
+                <td class="py-2 px-4 border-b">2023</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">15223451</td>
+                <td class="py-2 px-4 border-b">Diana Pratama</td>
+                <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                <td class="py-2 px-4 border-b">2023</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">15223452</td>
+                <td class="py-2 px-4 border-b">Daina Pratama</td>
+                <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                <td class="py-2 px-4 border-b">2023</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">124465787</td>
+                <td class="py-2 px-4 border-b">Alvaro Giovani</td>
+                <td class="py-2 px-4 border-b">Agroindustri</td>
+                <td class="py-2 px-4 border-b">2023</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">16323038</td>
+                <td class="py-2 px-4 border-b">Masita Gani</td>
+                <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                <td class="py-2 px-4 border-b">2023</td>
+                
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">14578020</td>
+                <td class="py-2 px-4 border-b">Ramli Keliolan</td>
+                <td class="py-2 px-4 border-b">Teknik Listrik</td>
+                <td class="py-2 px-4 border-b">2023</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">16323090</td>
+                <td class="py-2 px-4 border-b">Renata Adilisyah</td>
+                <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                <td class="py-2 px-4 border-b">2021</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">14578028</td>
+                <td class="py-2 px-4 border-b">Riana Ramadani Siahaan</td>
+                <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                <td class="py-2 px-4 border-b">2021</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">17890513</td>
+                <td class="py-2 px-4 border-b">Renita Natasya</td>
+                <td class="py-2 px-4 border-b">Rekayasa Jalan dan Jembatan</td>
+                <td class="py-2 px-4 border-b">2015</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">13404231</td>
+                <td class="py-2 px-4 border-b">Ridwan Tanggahma</td>
+                <td class="py-2 px-4 border-b">Teknik Mesin</td>
+                <td class="py-2 px-4 border-b">2023</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">12572739</td>
+                <td class="py-2 px-4 border-b">Rifaldo Alansyah Putra</td>
+                <td class="py-2 px-4 border-b">Teknik Mesin</td>
+                <td class="py-2 px-4 border-b">2022</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">163238959</td>
+                <td class="py-2 px-4 border-b">Sarvia Gani</td>
+                <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                <td class="py-2 px-4 border-b">2018</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">163230465</td>
+                <td class="py-2 px-4 border-b">Putriyani Florensia</td>
+                <td class="py-2 px-4 border-b">Agroindustri</td>
+                <td class="py-2 px-4 border-b">2022</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">11011246</td>
+                <td class="py-2 px-4 border-b">Wanda Kibas</td>
+                <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                <td class="py-2 px-4 border-b">2023</td>
+            </tr>
+            <tr>
+                <td class="py-2 px-4 border-b">1632047</td>
+                <td class="py-2 px-4 border-b">Yayan Sihombing</td>
+                <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                <td class="py-2 px-4 border-b">2015</td>
+            </tr>
+        </tbody>
+      </table>
+      <div class="pagination">
+        <button id="prevPage">Previous</button>
+        <span id="pageInfo"></span>
+        <button id="nextPage">Next</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+     document.getElementById('toggleButton').addEventListener('click', function() {
+            var sidebar = document.getElementById('sidebar');
+            var content = document.querySelector('.content');
+            if (sidebar.classList.contains('active')) {
+                sidebar.classList.remove('active');
+                content.classList.remove('shift');
+            } else {
+                sidebar.classList.add('active');
+                content.classList.add('shift');
+            }
+        });
+  </script>
+  <script src="daftar.js"></script>
+</body>
+</html>

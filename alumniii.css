@@ -1,0 +1,536 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+
+.normal-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+
+
+
+
+/* Body styling */
+body {
+    font-family: 'Trebuchet MS', sans-serif; /* Add a fallback font */
+    line-height: 1.89;
+    background-image: url('toga.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed; 
+    color: #1d0a54;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header */
+header {
+    width: 100%;
+    height: 80px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(8, 23, 156, 0.75);
+    z-index: 1000;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 20px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.header-content h1 {
+    font-size: 24px;
+    color: white;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+
+
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 90px 15px; 
+    background-color: transparent;
+    position: relative;
+    min-height: 500px;
+    text-align: center;
+}
+
+.hero-text {
+    position: relative;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50px 20px 50px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.29);
+    max-width: 600px;
+    min-width: 400px; 
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.hero-text h1 {
+    font-size: 2.2em; 
+    font-weight: bold;
+    color: #1d0a54; 
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.hero-text p {
+    text-align: justify;
+    font-size: 1.2em;
+    color: #1d0a54;
+}
+
+.hero-image-inside-text {
+    max-width: 1200px;
+    height: 600px;
+    border-radius: 10px; 
+    margin-top: 21px; 
+    opacity: 0;
+    transition: opacity 1s;
+
+}
+
+.hero-text.animate,
+.hero-image-inside-text.animate {
+    opacity: 1;
+}
+
+
+
+.hero-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary {
+    background-color: #4a5de4;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #3b4ac9;
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+
+
+
+/* Reusable Content Box */
+.content-boxes {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    width: 100%; /* added */
+    padding: 0; /* added */
+    margin: 0; /* added */
+}
+
+.content-box {
+    flex: 1;
+    text-align: center;
+    padding: 30px; 
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 50px 20px 50px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0);
+    margin: 0; /* added */
+  }
+  
+  .content-box img {
+    width: 100%;
+    height: 300px; /* adjust the height to match the hero text */
+    object-fit: cover;
+    border-radius: 50px 20px 50px 20px;
+  }
+  
+  .content-box .hero-image-inside-text {
+    width: 600px;
+    height: 520px;
+    position: relative;
+    top: -20px; /* adjust this value to your liking */
+  }
+
+
+.content-text h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #1d0a54;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content-text img {
+    width: 100%;
+    height: 300px; /* adjust the height to match the hero text */
+    object-fit: cover;
+    border-radius: 50px 20px 50px 20px;
+    margin-bottom: 20px;
+  }
+
+.content-text p {
+    text-align: justify;
+    font-size: 1.2em;
+    color: #1d0a54;
+}
+
+.content-buttons {
+    margin-top: 20px;
+}
+
+.content-buttons .btn {
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+/* Add your existing CSS here */
+/* Tentang Section */
+/* Ensure the content-text within Tentang section is also centered */
+.tentang-content .content-text h2 {
+    text-align: center;
+}
+
+.menu-list a {
+    font-size: 20px; /* Adjust the size as needed */
+}
+
+.image-left {
+    height: 300px; /* Adjust height */
+    width: 200px; /* Adjust width if needed */
+}
+
+
+
+#tentang h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #1d0a54;
+    text-align: center; /* Add this line to center align the h2 text */
+    margin-bottom: 20px;
+}
+
+
+
+#tentang {
+    padding: 20px;
+}
+
+.tentang-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* Add gap between content-text and menu-alumni */
+}
+
+.content-text {
+    flex: 1 1 60%; /* Flex-grow: 1, Flex-shrink: 1, Flex-basis: 60% */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.content-text img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.menu-alumni {
+    flex: 1 1 30%; /* Flex-grow: 1, Flex-shrink: 1, Flex-basis: 30% */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-alumni h3 {
+    font-size: 1.8em;
+    color: #1d0a54;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.menu-alumni ul {
+    list-style-type: none;
+    padding-left: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 10px;
+}
+
+.menu-alumni ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-alumni ul li a {
+    text-decoration: none;
+    color: #1d0a54;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+
+/* Add your existing CSS here */
+#lowongan h2 {
+    font-size: 2.5em; /* Adjust the size as needed */
+    font-weight: bold;
+    color: #1d0a54; /* Adjust color if needed */
+    text-align: center; /* Center-align the text */
+    margin-bottom: 20px; /* Adjust margin if needed */
+}
+
+.job-listings {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.job-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    width: 23%;
+    transition: transform 0.3s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+}
+
+.job-card img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.job-card h3 {
+    font-size: 1.2em;
+    margin: 15px 0 10px;
+}
+
+.job-card p {
+    color: #666;
+    margin: 5px 0;
+}
+
+.see-more-link {
+    font-size: 1.2em; /* Adjust the size as needed */
+    font-weight: bold; /* Make the text bold */
+    color: #0056b3; /* Adjust color if needed */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Ensure the link is inline-block */
+    margin-top: 20px; /* Adjust margin if needed */
+}
+
+.see-more-link:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+
+
+
+
+.content-box {
+    padding: 20px;
+    background-color: #f9f9f900; /* Adjust to match your theme */
+}
+
+.content-text h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.post-listings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.post-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: calc(50% - 10px); /* Two cards per row */
+    margin-bottom: 20px;
+    padding: 15px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.post-card h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.post-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+
+#berita h2 {
+    font-size: 2.5em; /* Adjust the size as needed */
+    font-weight: bold;
+    color: #1d0a54; /* Adjust color if needed */
+    text-align: center; /* Center-align the text */
+    margin-bottom: 20px; /* Adjust margin if needed */
+}
+
+.see-more-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+
+
+
+
+
+/* Footer */
+footer {
+    background-color: rgba(8, 23, 156, 0.75);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .hero-text {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .content-box {
+        padding: 30px 15px;
+    }
+
+    .content-text h2 {
+        font-size: 2em;
+    }
+}
+
+
+
+
+

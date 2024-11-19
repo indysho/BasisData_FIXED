@@ -1,0 +1,316 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("background_blue.jpg");
+    background-size: cover;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    padding: 25px;
+    padding-left: 220px;
+    max-width: 100%; /* Ensure it doesn't overflow the screen */
+    box-sizing: border-box; /* Ensure padding is included in the element's width */
+}
+
+.info-section {
+    flex: 1 1 100%; /* Allow it to take full width on smaller screens */
+    max-width: 100%;
+}
+
+
+.container {
+    padding: 0px;
+    padding-bottom: 75px;
+}
+
+.go-back-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; 
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.go-back-button:hover {
+    background-color: #f0f0f0;
+}
+
+#alumniTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#alumniTable th, #alumniTable td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#alumniTable th {
+    background-color: #f2f2f2;
+}
+
+#alumniTable td {
+    word-wrap: break-word; /* Ensure long words wrap to prevent overflow */
+}
+
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background-color: #09147ac7;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.site-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.date {
+    font-size: 14px;
+}
+
+.sidebar {
+    background-color: #09147a99;
+    color: white;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    position: sticky;
+    top: 0;
+    margin-bottom: 20px; 
+}
+  
+main {
+    flex: 1;
+    display: flex;
+    padding: 25px;
+    padding-left: 220px; 
+}
+
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 10px 0;
+}
+
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.login-section {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.login-section h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.recaptcha {
+    display: flex;
+    align-items: center;
+}
+
+.recaptcha input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.captcha-box {
+    margin-left: 10px;
+}
+
+.recaptcha img {
+    width: 50px;
+    height: auto;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-form button:hover {
+    background-color: #0056b3;
+}
+
+.ad-banner {
+    margin-top: 20px;
+}
+
+.ad-banner img {
+    width: 50%;
+    height: auto;
+    align-items: center;
+}
+
+.info-section {
+    overflow-x: auto; /* Allow horizontal scrolling if necessary */
+    max-width: 100%; /* Ensure it doesn’t overflow its parent */
+    box-sizing: border-box;
+}
+
+.info-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.info-section .about,
+.info-section .contact,
+.info-section .notice {
+    margin-bottom: 20px;
+}
+
+.info-section .contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-section .contact ul li {
+    margin-bottom: 5px;
+}
+
+.info-section .contact ul li a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.info-section .contact ul li a:hover {
+    text-decoration: underline;
+}
+
+.info-section .notice {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #f5c6cb;
+}
+
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+    color: black;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.pagination {
+    text-align: center;
+}
+
+
+
+.pagination a:hover {
+    background-color: #ddd;
+}
+
+#pagination a {
+    margin: 0 5px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #007bff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#pagination a.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+#pagination a:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's width */
+    overflow-x: auto; /* Allow horizontal scroll if the content is too wide */
+}
+
+
+

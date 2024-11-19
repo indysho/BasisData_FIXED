@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Alumni</title>
+    <link rel="stylesheet" href="login.css">
+    <style>
+        /* Your existing styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url("background_blue.jpg");
+            background-size: cover;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            padding-bottom: 75px;
+        }
+
+        .go-back-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 8px 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: white;
+            color: #333;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .go-back-button:hover {
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #09147ac7;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .site-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .date {
+            font-size: 14px;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            padding: 25px;
+            padding-left: 220px;
+        }
+
+        .login-section {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .login-section h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .login-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .recaptcha {
+            display: flex;
+            align-items: center;
+        }
+
+        .recaptcha input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .captcha-box {
+            margin-left: 10px;
+        }
+
+        .recaptcha img {
+            width: 50px;
+            height: auto;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .login-form button:hover {
+            background-color: #0056b3;
+        }
+
+        .ad-banner {
+            margin-top: 20px;
+        }
+
+        .ad-banner img {
+            width: 50%;
+            height: auto;
+            align-items: center;
+        }
+
+        .info-section {
+            flex: 1;
+        }
+
+        /* Tab styles */
+        .tab {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .tab button {
+            background-color: #f1f1f1;
+            border: none;
+            outline: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .tab button.active {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        /* Existing card styles */
+        .card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+
+        .tab-menu {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .tablink {
+            background-color: #ddd;
+            color: black;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s;
+            margin-right: 5px;
+        }
+        .tablink:hover {
+            background-color: #bbb;
+        }
+        .tablink.active {
+            background-color: #aaa;
+            color: white;
+        }
+        .tabcontent {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="goBack()" class="go-back-button">Go Back</button>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="Politeknik_Negeri_Fakfak.webp" alt="Logo">
+                <span class="site-title">RUANG ALUMNI & CEK IJAZAH</span>
+            </div>
+            <div class="date">
+                <script type="text/javascript">
+                    document.write(new Date().toLocaleDateString('id-ID', {
+                        weekday: 'long',
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric'
+                    }));
+                </script>
+            </div>
+        </header>
+
+        <main>
+            <section class="login-section card">
+                <h1>Login Alumni</h1>
+                <form class="login-form" id="loginForm">
+                    <label for="username">User Name</label>
+                    <input type="text" id="username" placeholder="Enter NIM" required>
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Tanggal Lahir : 2007-04-14" required>
+
+                    <div class="recaptcha">
+                        <input type="checkbox" id="recaptcha" required>
+                        <label for="recaptcha">I'm not a robot</label>
+                        <div class="captcha-box">
+                            <img src="captcha.png" alt="Captcha">
+                        </div>
+                    </div>
+
+                    <button type="submit">Login Alumni</button>
+                </form>
+
+                <div id="errorMessage" class="error-message"></div>
+
+                <div class="ad-banner">
+                    <img src="info.jpg" alt="Ad Banner">
+                </div>
+            </section>
+
+            <!-- Tab Navigation -->
+            <div class="info-section">
+                <div class="tab">
+                    <button class="tablinks active" onclick="openTab(event, 'About')">About</button>
+                    <button class="tablinks" onclick="openTab(event, 'DaftarAlumni')">Daftar Alumni</button>
+                </div>
+
+                <!-- About Section -->
+                <div id="About" class="tab-content active">
+                    <section class="about">
+                        <h2>About</h2>
+                        <p>TENTANG RUANG ALUMNI</p>
+                        <p>Ruang Alumni ditujukan bagi alumni Politeknik Negeri Fakfak seluruh
+                            angkatan dalam rangka proses pendataan dan tracer studi alumni,
+                            sehingga antara Polinef dan Alumni terjadi suatu komunikasi yang harmonis.</p>
+                    </section>
+                    <section class="contact">
+                        <h2>Kontak Kami</h2>
+                        <ul>
+                            <li>Phone: <a href="tel:0822-4862-0075">0822-4862-0075</a></li>
+                            <li>Instagram: <a href="https://www.instagram.com/official.polinef/">@Official.Polinef</a></li>
+                            <li>Polinef Information Center: <a href="https://polinef.siakadcloud.com/spmbfront/home">https://polinef.siakadcloud.com</a></li>
+                        </ul>
+                    </section>
+                    <section class="notice">
+                        <p>Untuk mengakses Ruang Alumni, silahkan LOGIN terlebih dahulu pada form yang telah disediakan,
+                            gunakan NIM untuk username dan tanggal lahir (yyyy-mm-dd) untuk password pertama kali.
+                            Setelah itu ubahlah password Anda sesuai dengan yang Anda kehendaki.</p>
+                    </section>
+                </div>
+                
+
+                <!-- Daftar Alumni Section -->
+                <div class="table-wrapper">
+                    <table id="alumniTable">
+                        <thead>
+                            <tr>
+                                    <th>NIM</th>
+                                    <th>Nama</th>
+                                    <th>Jurusan</th>
+                                    <th>Thn Lulus</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">16320066</td>
+                                    <td class="py-2 px-4 border-b">Levi Ackerman</td>
+                                    <td class="py-2 px-4 border-b">Teknik Mesin</td>
+                                    <td class="py-2 px-4 border-b">2023</td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">16323046</td>
+                                    <td class="py-2 px-4 border-b">Anisa Putri Utami</td>
+                                    <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                                    <td class="py-2 px-4 border-b">2023</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">16320120</td>
+                                    <td class="py-2 px-4 border-b">Freya Alhamdulillah</td>
+                                    <td class="py-2 px-4 border-b">Agroindustri</td>
+                                    <td class="py-2 px-4 border-b">2023</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">16321170</td>
+                                    <td class="py-2 px-4 border-b">Zee Jekatedimana</td>
+                                    <td class="py-2 px-4 border-b">Rekayasa Jalan dan Jembatan</td>
+                                    <td class="py-2 px-4 border-b">2024</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">16320035</td>
+                                    <td class="py-2 px-4 border-b">Rafael Struick</td>
+                                    <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                                    <td class="py-2 px-4 border-b">2023</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">16320040</td>
+                                    <td class="py-2 px-4 border-b">Tom A. Holland</td>
+                                    <td class="py-2 px-4 border-b">Teknik Listrik</td>
+                                    <td class="py-2 px-4 border-b">2023</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">16320041</td>
+                                    <td class="py-2 px-4 border-b">Anindi Maulani Mustofa</td>
+                                    <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                                    <td class="py-2 px-4 border-b">2023</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">16320042</td>
+                                    <td class="py-2 px-4 border-b">Rosita</td>
+                                    <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                                    <td class="py-2 px-4 border-b">2023</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">16320043</td>
+                                    <td class="py-2 px-4 border-b">Endang Aftia</td>
+                                    <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                                    <td class="py-2 px-4 border-b">2023</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">16320045</td>
+                                    <td class="py-2 px-4 border-b">Albar Palahidu</td>
+                                    <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                                    <td class="py-2 px-4 border-b">2023</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">16321044</td>
+                                    <td class="py-2 px-4 border-b">Miguel Diaz</td>
+                                    <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                                    <td class="py-2 px-4 border-b">2024</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">16320066</td>
+                                    <td class="py-2 px-4 border-b">Albertus Giorgino</td>
+                                    <td class="py-2 px-4 border-b">Teknik Mesin</td>
+                                    <td class="py-2 px-4 border-b">2023</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">17823456</td>
+                                    <td class="py-2 px-4 border-b">Afita Putri</td>
+                                    <td class="py-2 px-4 border-b">Teknik Sipil</td>
+                                    <td class="py-2 px-4 border-b">2020</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">16324562</td>
+                                    <td class="py-2 px-4 border-b">Abastian Aliandro Kamandaka</td>
+                                    <td class="py-2 px-4 border-b">Teknik Sipil</td>
+                                    <td class="py-2 px-4 border-b">2023</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">16545809</td>
+                                    <td class="py-2 px-4 border-b">Andreas Reyliando</td>
+                                    <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                                    <td class="py-2 px-4 border-b">2022</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">16323089</td>
+                                    <td class="py-2 px-4 border-b">Arfaksyad Gani</td>
+                                    <td class="py-2 px-4 border-b">Teknik Listrik</td>
+                                    <td class="py-2 px-4 border-b">2023</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">18182373</td>
+                                    <td class="py-2 px-4 border-b">Delila Natalia</td>
+                                    <td class="py-2 px-4 border-b">Teknik Listrik</td>
+                                    <td class="py-2 px-4 border-b">2023</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">15223451</td>
+                                    <td class="py-2 px-4 border-b">Diana Pratama</td>
+                                    <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                                    <td class="py-2 px-4 border-b">2023</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">15223452</td>
+                                    <td class="py-2 px-4 border-b">Daina Pratama</td>
+                                    <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                                    <td class="py-2 px-4 border-b">2023</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">124465787</td>
+                                    <td class="py-2 px-4 border-b">Alvaro Giovani</td>
+                                    <td class="py-2 px-4 border-b">Agroindustri</td>
+                                    <td class="py-2 px-4 border-b">2023</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">16323038</td>
+                                    <td class="py-2 px-4 border-b">Masita Gani</td>
+                                    <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                                    <td class="py-2 px-4 border-b">2023</td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">14578020</td>
+                                    <td class="py-2 px-4 border-b">Ramli Keliolan</td>
+                                    <td class="py-2 px-4 border-b">Teknik Listrik</td>
+                                    <td class="py-2 px-4 border-b">2023</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">16323090</td>
+                                    <td class="py-2 px-4 border-b">Renata Adilisyah</td>
+                                    <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                                    <td class="py-2 px-4 border-b">2021</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">14578028</td>
+                                    <td class="py-2 px-4 border-b">Riana Ramadani Siahaan</td>
+                                    <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                                    <td class="py-2 px-4 border-b">2021</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">17890513</td>
+                                    <td class="py-2 px-4 border-b">Renita Natasya</td>
+                                    <td class="py-2 px-4 border-b">Rekayasa Jalan dan Jembatan</td>
+                                    <td class="py-2 px-4 border-b">2015</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">13404231</td>
+                                    <td class="py-2 px-4 border-b">Ridwan Tanggahma</td>
+                                    <td class="py-2 px-4 border-b">Teknik Mesin</td>
+                                    <td class="py-2 px-4 border-b">2023</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">12572739</td>
+                                    <td class="py-2 px-4 border-b">Rifaldo Alansyah Putra</td>
+                                    <td class="py-2 px-4 border-b">Teknik Mesin</td>
+                                    <td class="py-2 px-4 border-b">2022</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">163238959</td>
+                                    <td class="py-2 px-4 border-b">Sarvia Gani</td>
+                                    <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                                    <td class="py-2 px-4 border-b">2018</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">163230465</td>
+                                    <td class="py-2 px-4 border-b">Putriyani Florensia</td>
+                                    <td class="py-2 px-4 border-b">Agroindustri</td>
+                                    <td class="py-2 px-4 border-b">2022</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">11011246</td>
+                                    <td class="py-2 px-4 border-b">Wanda Kibas</td>
+                                    <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                                    <td class="py-2 px-4 border-b">2023</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 border-b">1632047</td>
+                                    <td class="py-2 px-4 border-b">Yayan Sihombing</td>
+                                    <td class="py-2 px-4 border-b">Manajemen Informatika</td>
+                                    <td class="py-2 px-4 border-b">2015</td>
+                                </tr>
+                                <!-- Add more rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="pagination"></div>
+                
+                        </table>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Function to go back to the previous page
+        function goBack() {
+            window.history.back();
+        }
+
+
+        const loginForm = document.querySelector('.login-form');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    
+    
+    loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const username = usernameInput.value;
+    const password = passwordInput.value;
+
+    if ((username === 'AdminIndy' && password === 'IndyZee') ||
+        (username === 'AdminItha' && password === 'RostaRmbia') ||
+        (username === 'AdminAftia' && password === 'EndangAftia')) {
+        window.location.href = 'admin.html';
+
+    } else if (username !== '' && isValidNIM(username)) {
+            window.location.href = 'index_stlhlogin.html';
+        } else {
+            showError('Username atau password salah');
+        }
+    });
+
+    function isValidNIM(username) {
+        // Add validation logic for NIM here, e.g., checking the format
+        return true; // Placeholder, assumes NIM is always valid
+    }
+    
+        // Tab switching function
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    
+        document.addEventListener('DOMContentLoaded', function () {
+    const table = document.getElementById('alumniTable').getElementsByTagName('tbody')[0];
+    const rows = Array.from(table.getElementsByTagName('tr'));
+    const rowsPerPage = 10;
+    let currentPage = 1;
+
+    function displayTable(page) {
+        table.innerHTML = ""; // Clear the table
+        const start = (page - 1) * rowsPerPage;
+        const end = start + rowsPerPage;
+        rows.slice(start, end).forEach(row => table.appendChild(row));
+    }
+
+    function setupPagination() {
+        const pagination = document.getElementById('pagination');
+        pagination.innerHTML = ""; // Clear the pagination
+        const pageCount = Math.ceil(rows.length / rowsPerPage);
+
+        for (let i = 1; i <= pageCount; i++) {
+            const pageLink = document.createElement('a');
+            pageLink.textContent = i;
+            pageLink.href = "#";
+            pageLink.className = i === currentPage ? 'active' : '';
+            pageLink.addEventListener('click', function (e) {
+                e.preventDefault();
+                currentPage = i;
+                displayTable(currentPage);
+                setupPagination();
+            });
+            pagination.appendChild(pageLink);
+        }
+    }
+
+    // Initial setup
+    displayTable(currentPage);
+    setupPagination();
+});
+
+
+    </script>
+    
+    
+</body>
+
+</html>
